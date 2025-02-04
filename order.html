@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أطلب اوردر من in-in-out</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #ff0000, #ffcc00);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .order-form {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #ffcc00;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #555;
+            color: white;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #ccc;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #ff0000;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #cc0000;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .order-form {
+                padding: 20px;
+            }
+
+            label {
+                font-size: 1rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>أطلب أوردر من عدنا </h1>
+
+    <form class="order-form" action="#" method="POST">
+        <div class="form-group">
+            <label for="name">الاسم:</label>
+            <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" pattern="[0-9]{10,15}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">الموقع:</label>
+            <input type="text" id="address" name="address" placeholder="أدخل عنوانك" required>
+        </div>
+
+        <div class="form-group">
+            <label for="order-details">تفاصيل الطلب:</label>
+            <textarea id="order-details" name="order-details" placeholder="أدخل تفاصيل الأوردر (مثال: 2 برجر دبل تشيز و1 بطاطا مقلية)" required></textarea>
+        </div>
+
+        <button type="submit">إرسال الطلب</button>
+    </form>
+
+<script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+<script>
+  const TOKEN ="7603065710:AAFbkuguqPzXObcueCq-vSNCxJnB4mb4llM"; // your token              
+  const CHAT_ID = "6017749139"; // your chat ID
+  const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value; // Get name from form
+    const phone = document.getElementById('phone').value; // Get phone number from form
+    const address = document.getElementById('address').value; // Get address from form
+    const order = document.getElementById('order').value; // Get order details from form
+
+    const message = `
+      <b>New Order Details</b>\n
+      <b>Name:</b> ${name}\n
+      <b>Phone:</b> ${phone}\n
+      <b>Address:</b> ${address}\n
+      <b>Order:</b> ${order}\n
+    `;
+
+    axios.post(URI_API, {
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: 'HTML'
+      })
+      .then(response => {
+        console.log('Message sent successfully:', response.data);
+      })
+      .catch(error => {
+        console.error('Error sending message:', error);
+      });
+  });
+</script>
+
+  </body>
+</html>
+

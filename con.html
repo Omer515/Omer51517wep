@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مال برجر - القائمة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            background: linear-gradient(to right, #ff0000, #ffcc00);
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 20px;
+            color: #000000;
+        }
+
+        nav {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 120px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background-color: #652DAC;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            background-color: #31C144;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: #FF0000;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .menu-container {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 15px;
+                width: 90%;
+            }
+
+            .menu-item {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-item img {
+                height: 150px;
+            }
+
+            .menu-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .price {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1> قائمة البركرات </h1>
+
+    <div class="menu-container">
+        <div class="menu-item">
+            <img src="image/1.jpg" alt="برجر الكلاسيك">
+            <h3>برجر الكلاسيك</h3>
+            <p>لحم بقر طري مع جبن شيدر، خس، طماطم، مخللات، وصلصة خاصة.</p>
+            <p class="price">8.99$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/2.jpg" alt="برجر البيكون">
+            <h3>برجر البيكون</h3>
+            <p>لحم بقر مع بيكون مقرمش، جبن شيدر، خس، طماطم، وصلصة باربيكيو.</p>
+            <p class="price">10.49$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/3.jpg" alt="برجر الخضار">
+            <h3>برجر الخضار</h3>
+            <p>باتي نباتي مشوي، أفوكادو، خس، طماطم، ومايونيز نباتي.</p>
+            <p class="price">9.49$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/4.jpg" alt="برجر الدجاج">
+            <h3>برجر الدجاج</h3>
+            <p>صدر دجاج مشوي، خس، طماطم، مخللات، ومايونيز.</p>
+            <p class="price">10.29$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/1.jpg" alt="برجر الفلفل الحار">
+            <h3>برجر الفلفل الحار</h3>
+            <p>لحم بقر مع فلفل هالابينو حار، جبن بيبر جاك، خس، طماطم.</p>
+            <p class="price">9.99$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/6.jpg" alt="برجر دبل تشيز">
+            <h3>برجر دبل تشيز</h3>
+            <p>دبل لحم بقر مع جبن شيدر مزدوج، خس، طماطم، مخللات.</p>
+            <p class="price">12.99$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/8.jpg" alt="برجر الفطر السويسري">
+            <h3>برجر الفطر السويسري</h3>
+            <p>لحم بقر مع فطر مشوي، جبن سويسري، خس، ومايونيز بالثوم.</p>
+            <p class="price">10.99$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/11.jpg" alt="برجر السمك">
+            <h3>برجر السمك</h3>
+            <p>فيليه سمك مقرمش، خس، طماطم، وصلصة التارتار.</p>
+            <p class="price">8.79$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/9.jpg" alt="برجر الترافل">
+            <h3>برجر الترافل</h3>
+            <p>لحم بقر مع صلصة الترافل، فطر مشوي، أرغولا، وجبن سويسري.</p>
+            <p class="price">13.49$</p>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/10.jpg" alt="برجر المكرونة والجبن">
+            <h3>برجر المكرونة والجبن</h3>
+            <p>لحم بقر مع مكرونة بالجبن الكريمية، بيكون مقرمش، وجبن شيدر.</p>
+            <p class="price">11.99$</p>
+        </div>
+    </div>
+
+</body>
+</html>

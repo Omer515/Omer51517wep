@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu In-In-Out</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff0000, #ffcc00); /* تدرج بين الأحمر والأصفر */
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .menu-container {
+            width: 210mm; /* حجم ورقة A4 */
+            height: 297mm; /* حجم ورقة A4 */
+            background: url('image/back.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 10px; /* إضافة حواف مدورة */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* تأثير الظل لإعطاء تأثير العمق */
+            overflow: hidden; /* لإخفاء التمرير الزائد عن الخلفية */
+        }
+
+        .menu-content {
+            background-color: rgba(0, 0, 0, 0); /* خلفية سوداء شبه شفافة */
+            border-radius: 10px;
+            padding: 20px;
+            height: 100%;
+            overflow-y: auto; /* تمكين التمرير العمودي */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0,10); /* ظل داخلي لتأثير العمق */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: #ffcc00; /* اللون الأصفر */
+        }
+
+        .header img {
+            max-width: 80px;
+            margin-top: 10px;
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #ffcc00; /* اللون الأصفر */
+        }
+
+        .menu-item {
+            background-color: #652DAC;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px; /* مسافة بين العناصر */
+            transition: background-color 0.1s ease;
+            /* تمت إزالة الظل */
+        }
+
+        .menu-item h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+ /* اللون الأصفر */
+        }
+
+        .menu-item p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            color: #FF0000; /* اللون الأحمر */
+            font-weight: bold;
+        }
+
+        .menu-item:hover {
+            background-color:#31C144; /* تغيير الخلفية عند التمرير بالماوس */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu-container">
+        <div class="menu-content">
+            <div class="header">
+                <h1>In-In-Out</h1>
+                <img src="image/logo4.jpg" alt="Logo">
+            </div>
+
+            <div class="menu-title">
+                <h2>قائمة البرجر</h2>
+            </div>
+
+            <!-- عناصر البرجر -->
+            <div class="menu-item">
+                <h3>برجر الكلاسيك</h3>
+                <p>لحم بقر طري، جبن شيدر، خس، طماطم، مخللات، وصلصة خاصة.</p>
+                <p class="price">8.99$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر البيكون</h3>
+                <p>لحم بقر، بيكون مقرمش، جبن شيدر، خس، طماطم، وصلصة باربيكيو.</p>
+                <p class="price">10.49$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر الخضار</h3>
+                <p>باتي نباتي مشوي، أفوكادو، خس، طماطم، ومايونيز نباتي.</p>
+                <p class="price">9.49$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر الدجاج</h3>
+                <p>صدر دجاج مشوي، خس، طماطم، مخللات، ومايونيز.</p>
+                <p class="price">10.29$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر الفلفل الحار</h3>
+                <p>لحم بقر، فلفل هالابينو حار، جبن بيبر جاك، خس، طماطم، ومايونيز حار.</p>
+                <p class="price">9.99$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر دبل تشيز</h3>
+                <p>دبل لحم بقر، جبن شيدر مزدوج، خس، طماطم، مخللات، وصلصة.</p>
+                <p class="price">12.99$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر الفطر السويسري</h3>
+                <p>لحم بقر، فطر مشوي، جبن سويسري، خس، ومايونيز بالثوم.</p>
+                <p class="price">10.99$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر سمك</h3>
+                <p>فيليه سمك مقرمش، خس، طماطم، وصلصة التارتار.</p>
+                <p class="price">8.79$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر الترافل</h3>
+                <p>لحم بقر، صلصة الترافل، فطر مشوي، أرغولا، وجبن سويسري.</p>
+                <p class="price">13.49$</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>برجر المكرونة والجبن</h3>
+                <p>لحم بقر، مكرونة بالجبن كريمية، بيكون مقرمش، وجبن شيدر.</p>
+                <p class="price">11.99$</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
